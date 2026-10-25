@@ -1,1 +1,466 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradyumn Prajapati | Personal Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f5fb;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #172554, #4338ca, #6366f1);
+            color: white;
+            padding: 40px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            box-shadow: 0 15px 35px #312e8130;
+        }
+
+        .profile-header img {
+            width: 165px;
+            height: 165px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            background: #e0e7ff;
+        }
+
+        .profile-header h1 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .profile-header p {
+            color: #e0e7ff;
+            margin-bottom: 14px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin: 4px 3px 4px 0;
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .header-badge {
+            background: #ffffff25;
+            color: white;
+            border: 1px solid #ffffff40;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 26px;
+            box-shadow: 0 5px 20px #0f172a0a;
+            border: 1px solid #e8ebf4;
+        }
+
+        .card h2 {
+            font-size: 21px;
+            color: #312e81;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eef2ff;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #64748b;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            margin: 5px 0 18px;
+            overflow-wrap: anywhere;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .about-text {
+            color: #475569;
+            font-size: 15px;
+        }
+
+        .skill {
+            margin-bottom: 19px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .skill-info span:last-child {
+            color: #4f46e5;
+        }
+
+        .progress {
+            height: 9px;
+            background: #e9eaf5;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #4338ca, #818cf8);
+            animation: grow 1.2s ease forwards;
+        }
+
+        @keyframes grow {
+            from {
+                width: 0;
+            }
+            to {
+                width: var(--level);
+            }
+        }
+
+        .skill-note {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .project {
+            background: #f8faff;
+            border: 1px solid #e0e7ff;
+            padding: 18px;
+            border-radius: 14px;
+        }
+
+        .project h3 {
+            color: #3730a3;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .project p {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .education-item {
+            border-left: 3px solid #6366f1;
+            padding-left: 16px;
+        }
+
+        .education-item h3 {
+            font-size: 16px;
+        }
+
+        .education-item p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 10px 10px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                margin: 15px auto;
+                padding: 12px;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 28px 18px;
+                gap: 15px;
+            }
+
+            .profile-header h1 {
+                font-size: 27px;
+            }
+
+            .layout {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="profile-header">
+            <img src="profile.jpg" alt="Pradyumn Prajapati profile picture">
+            <div>
+                <h1>Pradyumn Prajapati</h1>
+                <p>AI Full-Stack Developer | Software Engineer</p>
+                <span class="badge header-badge">🤖 Generative AI</span>
+                <span class="badge header-badge">💻 Full-Stack Development</span>
+                <span class="badge header-badge">⚡ Python & FastAPI</span>
+            </div>
+        </header>
+
+        <div class="layout">
+            <section class="card">
+                <h2>Name</h2>
+                <p class="info-label">Full Name</p>
+                <p class="info-value">Pradyumn Prajapati</p>
+            </section>
+
+            <section class="card">
+                <h2>Email</h2>
+                <p class="info-label">Contact Email</p>
+                <p class="info-value">
+                    <a href="mailto:technopradyumn@gmail.com">
+                        technopradyumn@gmail.com
+                    </a>
+                </p>
+            </section>
+
+            <section class="card full-width">
+                <h2>Profile</h2>
+                <span class="badge">AI Full-Stack Developer</span>
+                <span class="badge">Junior Software Engineer</span>
+                <span class="badge">Python Backend Developer</span>
+                <span class="badge">Generative AI Developer</span>
+                <p class="about-text">
+                    Interested in building intelligent web applications,
+                    scalable backend APIs, and AI-powered products using
+                    modern web technologies and large language models.
+                </p>
+            </section>
+
+            <section class="card full-width">
+                <h2>About me</h2>
+                <p class="about-text">
+                    I am a software developer with 1.2 years of professional
+                    mobile application development experience using Flutter
+                    and Dart. I have worked on production applications,
+                    REST API integrations, databases, authentication, and
+                    chatbot features powered by large language models.
+                    I am also developing my skills in Python, FastAPI,
+                    React, PostgreSQL, retrieval-augmented generation (RAG),
+                    and agentic AI. I enjoy learning by building practical
+                    projects and solving real-world engineering problems.
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>Skills</h2>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Flutter & Dart</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="--level: 90%"></div>
+                    </div>
+                    <p class="skill-note">Professional experience</p>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>JavaScript & React</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="--level: 70%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Python & FastAPI</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="--level: 65%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>SQL & PostgreSQL</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="--level: 65%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Generative AI & LLM APIs</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="--level: 65%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>RAG & Agentic AI</span>
+                        <span>55%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="--level: 55%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Docker & Cloud Deployment</span>
+                        <span>45%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="--level: 45%"></div>
+                    </div>
+                </div>
+
+                <p class="skill-note">
+                    Skill percentages are illustrative self-assessments.
+                    Adjust them to reflect your actual proficiency.
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>Technical Expertise</h2>
+                <p class="info-label">Programming Languages</p>
+                <p>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">Dart</span>
+                    <span class="badge">SQL</span>
+                </p>
+
+                <p class="info-label">Frameworks & Tools</p>
+                <p>
+                    <span class="badge">React</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">Node.js</span>
+                    <span class="badge">Flutter</span>
+                    <span class="badge">Git</span>
+                    <span class="badge">Docker</span>
+                </p>
+
+                <p class="info-label">AI Technologies</p>
+                <p>
+                    <span class="badge">LangChain</span>
+                    <span class="badge">LangGraph</span>
+                    <span class="badge">RAG</span>
+                    <span class="badge">Vector Databases</span>
+                    <span class="badge">LLM APIs</span>
+                </p>
+            </section>
+
+            <section class="card full-width">
+                <h2>Projects</h2>
+                <div class="projects">
+                    <article class="project">
+                        <h3>🚀 DocuMind AI</h3>
+                        <p>
+                            An AI-powered document question-answering
+                            application using React, FastAPI, Gemini,
+                            LangGraph, Qdrant, and background processing.
+                        </p>
+                    </article>
+
+                    <article class="project">
+                        <h3>📄 Resume IQ</h3>
+                        <p>
+                            An AI-assisted resume analysis application
+                            designed to evaluate resumes, match job
+                            descriptions, and suggest improvements.
+                        </p>
+                    </article>
+
+                    <article class="project">
+                        <h3>📱 CopyClip</h3>
+                        <p>
+                            A Flutter application published on the
+                            Google Play Store, built to provide a
+                            practical mobile productivity experience.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="card full-width">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Bachelor of Technology — Computer Science</h3>
+                    <p>Chandigarh Group of Colleges, Jhanjeri</p>
+                    <p>2021 – 2025</p>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Designed with passion for technology and continuous learning.</p>
+            <p>© 2026 Pradyumn Prajapati</p>
+        </footer>
+    </main>
+</body>
+</html>
